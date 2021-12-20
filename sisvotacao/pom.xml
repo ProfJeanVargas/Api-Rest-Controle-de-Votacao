@@ -13,7 +13,7 @@
 	<artifactId>votacao</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	<name>demo</name>
+	<name>API de Votacao</name>
 	<description>Sistema de Votacao</description>
 	<properties>
 		<java.version>11</java.version>
