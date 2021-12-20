@@ -13,5 +13,7 @@ public interface VotacaoRepository extends JpaRepository<Votacao, Long> {
 	public Votacao findByCpf(String cPF);
 
 	public Votacao findByCpfAndSessao(String cPF, Sessao sessao);
+	
+	
 
 }

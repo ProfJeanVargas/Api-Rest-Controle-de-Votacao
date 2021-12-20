@@ -2,53 +2,51 @@ package com.sistema.votacao.model;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Entity
-public class Totalizador implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class Totalizador implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTotalizador;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name="IDVOTACAO")
-	private Votacao votacao;
-	
-	private Long totaisSim;
-	private Long totaisNao;
+	private Sessao sessao;
+	private Integer totaisSim;
+	private Integer totaisNao;
 	
 	public Totalizador() {
 		super();
 	}
-		
-	public Votacao getVotacao() {
-		return votacao;
+	public Totalizador(Sessao sessao, int tSim, int tNao) {
+		this.sessao = sessao;
+		this.totaisNao = tNao;
+		this.totaisSim = tSim;
 	}
-
-	public void setVotacao(Votacao votacao) {
-		this.votacao = votacao;
+	
+	public Sessao getSessao() {
+		return sessao;
 	}
-
-	public Long getTotaisSim() {
+	public void setSessao(Sessao sessao) {
+		this.sessao = sessao;
+	}
+	public Integer getTotaisSim() {
 		return totaisSim;
 	}
-	public void setTotaisSim(Long totaisSim) {
+	public void setTotaisSim(Integer totaisSim) {
 		this.totaisSim = totaisSim;
 	}
-	public Long getTotaisNao() {
+	public Integer getTotaisNao() {
 		return totaisNao;
 	}
-	public void setTotaisNao(Long totaisNao) {
+	public void setTotaisNao(Integer totaisNao) {
 		this.totaisNao = totaisNao;
 	}
-
 }
