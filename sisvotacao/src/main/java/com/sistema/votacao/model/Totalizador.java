@@ -30,6 +30,14 @@ public class Totalizador implements Serializable {
 		super();
 	}
 		
+	public Votacao getVotacao() {
+		return votacao;
+	}
+
+	public void setVotacao(Votacao votacao) {
+		this.votacao = votacao;
+	}
+
 	public Long getTotaisSim() {
 		return totaisSim;
 	}
