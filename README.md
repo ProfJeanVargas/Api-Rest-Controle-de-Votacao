@@ -31,7 +31,7 @@
 <h2>Entidades<h2>
  dasda
 
-<h2>Tecnologias<h2>
+<h2>Tecnologias</h2>
 
 - Linguagem: Java
 
