@@ -50,14 +50,14 @@ public class VotacaoResource {
 
 	@PostMapping("/v1/votacao/voto")
 	@ResponseStatus(HttpStatus.CREATED)
-	@ApiOperation(value="Acrescenta votos a um sessao aberta")
+	@ApiOperation(value="Acrescenta votos a um sessao aberta - SEM VALIDAR CPF")
 	public Votacao adicionarVotoV1(@RequestParam String CPF, @RequestParam String voto, @RequestParam Long idSessao) {
 		return votacaoRN.v1AdicionaVoto(CPF, voto, idSessao);
 	}
 
 	@PostMapping("/v2/votacao/voto")
 	@ResponseStatus(HttpStatus.CREATED)
-	@ApiOperation(value="Acrescenta votos a um sessao aberta")
+	@ApiOperation(value="Acrescenta votos a um sessao aberta - COM VALIDAÇÃO DE CPF POR API EXTERNA")
 	public Votacao adicionarVotoV2(@RequestParam String CPF, @RequestParam String voto, @RequestParam Long idSessao) {
 		return votacaoRN.v2AdicionaVoto(CPF, voto, idSessao);
 	}
