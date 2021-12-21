@@ -14,24 +14,25 @@
 
 <h2>EndPoints:</h2>
 
-<b>GET ​/api​/v1​/pautas: </b> (obtem toda a lista de pautas cadastradas no sistema)
+<b>- GET ​/api​/v1​/pautas: </b> (obtem toda a lista de pautas cadastradas no sistema)
 
-<b>POST​/api​/v1​/pautas: </b> (cria uma nova pauta)
+<b>- POST​/api​/v1​/pautas: </b> (cria uma nova pauta)
 
-<b>GET​/api​/v1​/pautas​/{id}:</b> (busca uma pauta por seu id)
+<b>- GET​/api​/v1​/pautas​/{id}:</b> (busca uma pauta por seu id)
 
-<b>GET ​/api​/v1​/pautas​/{idpauta}​/{idsessao}​/votos:</b> (busca o total da votacao em determinada pauta e sessao)  
+<b>- GET ​/api​/v1​/pautas​/{idpauta}​/{idsessao}​/votos:</b> (busca o total da votacao em determinada pauta e sessao)  
 
-<b>POST ​/api​/v1​/votacao​/sessao:</b> (abre uma sessão de votação para uma pauta especifica
+<b>- POST ​/api​/v1​/votacao​/sessao:</b> (abre uma sessão de votação para uma pauta especifica
 
-<b>POST ​/api​/v1​/votacao​/voto:</b> (cadastra o voto numa sessão de votação SEM VALIDAR o documento (CPF)
+<b>- POST ​/api​/v1​/votacao​/voto:</b> (cadastra o voto numa sessão de votação SEM VALIDAR o documento (CPF)
 
-<b>POST ​/api​/v2​/votacao​/voto:</b> (cadastra o voto numa sessão de votação VALIDANDO O DOCUMENTO com uma API Externa (CPF)
+<b>- POST ​/api​/v2​/votacao​/voto:</b> (cadastra o voto numa sessão de votação VALIDANDO O DOCUMENTO com uma API Externa (CPF)
 
 <h2>Entidades<h2>
  dasda
 
 <h2>Tecnologias<h2>
+
 - Linguagem: Java
 
 - Framework: String Boot, Spring Web, Spring Data.
