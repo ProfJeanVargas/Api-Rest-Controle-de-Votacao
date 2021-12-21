@@ -29,6 +29,13 @@
 
 <b>- POST ​/api​/v2​/votacao​/voto:</b> (cadastra o voto numa sessão de votação VALIDANDO O DOCUMENTO com uma API Externa (CPF)
 
+<h2>Versionamento</h2>
+- Adicionado ao caminho relativo no path da URL: Exemplo: 
+
+  - POST ​/api​/v1​/votacao​/voto:</b> (cadastra o voto numa sessão de votação SEM VALIDAR o documento (CPF)
+ 
+  - POST ​/api​/v2​/votacao​/voto:</b> (cadastra o voto numa sessão de votação VALIDANDO O DOCUMENTO com uma API Externa (CPF)
+
 <h2>Tecnologias</h2>
 
 - Linguagem: Java
