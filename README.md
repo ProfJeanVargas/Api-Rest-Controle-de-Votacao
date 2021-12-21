@@ -28,9 +28,6 @@
 
 <b>- POST ​/api​/v2​/votacao​/voto:</b> (cadastra o voto numa sessão de votação VALIDANDO O DOCUMENTO com uma API Externa (CPF)
 
-<h2>Entidades<h2>
- dasda
-
 <h2>Tecnologias</h2>
 
 - Linguagem: Java
