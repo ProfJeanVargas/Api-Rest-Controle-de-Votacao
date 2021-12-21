@@ -18,8 +18,6 @@ import com.sistema.votacao.exception.ErrorNotFound;
 import com.sistema.votacao.model.Pauta;
 import com.sistema.votacao.model.dto.TotaisDTO;
 import com.sistema.votacao.repository.PautaRepository;
-import com.sistema.votacao.repository.SessaoRepository;
-import com.sistema.votacao.repository.TotalizadorRepository;
 import com.sistema.votacao.rn.PautaRN;
 
 import io.swagger.annotations.ApiOperation;
@@ -31,12 +29,6 @@ public class PautaResource {
 	
 	@Autowired
 	private PautaRepository pautaRepository;
-	
-	@Autowired
-	private SessaoRepository sessaoRepository;
-	
-	@Autowired
-	private TotalizadorRepository totalizadorRepository;
 	
 	@Autowired
 	private PautaRN pautaRN;

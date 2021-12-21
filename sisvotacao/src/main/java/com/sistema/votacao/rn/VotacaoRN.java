@@ -8,7 +8,7 @@ import javax.transaction.Transactional.TxType;
 
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.sistema.votacao.consumer.CPFConsumer;
 import com.sistema.votacao.exception.ErrorBadRequest;
@@ -22,7 +22,7 @@ import com.sistema.votacao.repository.TotalizadorRepository;
 import com.sistema.votacao.repository.VotacaoRepository;
 import com.sistema.votacao.util.Util;
 
-@Component
+@Service
 public class VotacaoRN {
 	
 	@Autowired
