@@ -1,7 +1,6 @@
 package com.sistema.votacao.model;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -11,6 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.joda.time.DateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Sessao implements Serializable {
@@ -26,9 +29,12 @@ public class Sessao implements Serializable {
 	@JoinColumn(name="IDPAUTA")
 	private Pauta pauta;
 	
-	private LocalDateTime abertura;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
+	private DateTime abertura;
 	private Long tempo;
-	private LocalDateTime fechamento;
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
+	private DateTime fechamento;
 	
 	public Sessao() {
 		super();
@@ -37,7 +43,7 @@ public class Sessao implements Serializable {
 	public Sessao(Pauta pauta, Long tempo) {
 		this.pauta = pauta;
 		this.tempo = tempo;
-		this.abertura = LocalDateTime.now();
+		this.setAbertura(DateTime.now());
 	}
 
 	public Long getIdSessao() {
@@ -56,14 +62,6 @@ public class Sessao implements Serializable {
 		this.pauta = pauta;
 	}
 
-	public LocalDateTime getAbertura() {
-		return abertura;
-	}
-
-	public void setAbertura(LocalDateTime abertura) {
-		this.abertura = abertura;
-	}
-
 	public Long getTempo() {
 		return tempo;
 	}
@@ -72,12 +70,19 @@ public class Sessao implements Serializable {
 		this.tempo = tempo;
 	}
 
-	public LocalDateTime getFechamento() {
+	public DateTime getAbertura() {
+		return abertura;
+	}
+
+	public void setAbertura(DateTime abertura) {
+		this.abertura = abertura;
+	}
+
+	public DateTime getFechamento() {
 		return fechamento;
 	}
 
-	public void setFechamento(LocalDateTime fechamento) {
+	public void setFechamento(DateTime fechamento) {
 		this.fechamento = fechamento;
 	}
-
 }

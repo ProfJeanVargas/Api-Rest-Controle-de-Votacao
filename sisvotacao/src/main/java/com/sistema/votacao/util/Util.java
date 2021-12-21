@@ -1,14 +1,13 @@
 package com.sistema.votacao.util;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-
+import org.joda.time.DateTime;
+import org.joda.time.Minutes;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Util {
 	//retorna o tempo em minutos
-	public Long retornaMinutos(LocalDateTime horaInicial, LocalDateTime horaFinal) {
-		return 	ChronoUnit.MINUTES.between(horaInicial, horaFinal);
+	public int retornaMinutos(DateTime horaInicial, DateTime horaFinal) {
+		return 	Minutes.minutesBetween(horaInicial, horaFinal).getMinutes();
 	}
 }

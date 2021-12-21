@@ -1,12 +1,12 @@
 package com.sistema.votacao.rn;
 
 
-import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -70,8 +70,10 @@ public class VotacaoRN {
 			throw new ErrorBadRequest("Sessão de votação já encerrada.");
 
 		//valida se a sessao já está em processo de encerramento. Se ainda não foi fechada, encerra
-		if (sessao.getFechamento() == null && util.retornaMinutos(sessao.getAbertura(), LocalDateTime.now()) > sessao.getTempo()) {
-			sessao.setFechamento(LocalDateTime.now());
+		//if (sessao.getFechamento() == null && util.retornaMinutos(sessao.getAbertura(), LocalDateTime.now()) > sessao.getTempo()) {
+		int tempoMinutos = util.retornaMinutos(sessao.getAbertura(), DateTime.now());
+		if (sessao.getFechamento() == null &&  tempoMinutos >= sessao.getTempo().intValue()) {
+			sessao.setFechamento(DateTime.now());
 			sessaoRepository.save(sessao);
 			throw new ErrorBadRequest("Sessão de votação já encerrada.");
 		}
