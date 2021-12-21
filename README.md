@@ -11,6 +11,7 @@
   - Poderá existir mais de uma sessão aberta para a mesma pauta, mas cada sessão possui seu tempo de votação individual.
   - Numa primeira versão de votação, é exigida uma validação do única para o id do usuário, aqui representado pelo CPF, mas sem uma validação do documento em si.
   - Numa segunda versão de votação, o id do usuário é representado também pelo CPF mas, nesse caso, existe a validação do mesmo, utilizando uma integração com uma api externa.
+  - Strings aceitas para o voto: SIM/NÃO, SIM/NAO, sim/não, sim/nao
 
 <h2>EndPoints:</h2>
 
